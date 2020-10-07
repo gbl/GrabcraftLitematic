@@ -11,6 +11,7 @@ import com.google.gson.stream.JsonReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.Reader;
 import java.util.Map;
 
 /**
@@ -43,7 +44,11 @@ public class RenderObject {
     }
     
     public void read(File jsonFile) throws IOException {
-        try (JsonReader reader = new JsonReader(new FileReader(jsonFile))) {
+        read(new FileReader(jsonFile));
+    }
+    
+    public void read(Reader is) throws IOException {
+        try (JsonReader reader = new JsonReader(is)) {
             Gson gson=new Gson();
             data=gson.fromJson(reader, MAP_TYPE);
         }
