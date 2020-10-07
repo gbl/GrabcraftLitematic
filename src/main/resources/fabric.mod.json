@@ -1,0 +1,22 @@
+{
+    "schemaVersion": 1,
+    "id": "grabcraft-downloader",
+    "version": "${version}",
+    "environment": "client",
+    "entrypoints": {
+        "client": [ "de.guntram.mcmod.GrabcraftLitematic.FabricMod" ]
+    },
+    "custom": {
+    },
+    "mixins": [
+    ],
+    "depends": {
+      "fabric": "*"
+    },
+    "recommends": {
+      "modmenu" : "*"
+    },
+    "name": "GrabcraftLitematic",
+    "description": "Download schemas from GrabCraft in Litematica format",
+    "authors": [ "Giselbaer" ]
+}
