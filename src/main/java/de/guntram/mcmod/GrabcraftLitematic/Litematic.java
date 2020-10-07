@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.LongArrayTag;
@@ -142,6 +143,13 @@ public class Litematic {
         for (BlockWithStates entry: palette) {
             CompoundTag blockEntry = new CompoundTag();
             blockEntry.putString("Name", entry.blockName);
+            if (entry.states != null && !entry.states.isEmpty()) {
+                CompoundTag properties = new CompoundTag();
+                for (Map.Entry<String, String> property: entry.states.entrySet()) {
+                    properties.putString(property.getKey(), property.getValue());
+                }
+                blockEntry.put("Properties", properties);
+            }
             blockStatePalette.add(blockEntry);
             // TODO add Properties
         }

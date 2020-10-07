@@ -9,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -22,7 +23,7 @@ import java.util.Set;
 
 class BlockWithStates {
     String blockName;
-    Map<String, Object> states;
+    Map<String, String> states;
     
     BlockWithStates(String name) {
         this.blockName = name;
@@ -31,7 +32,11 @@ class BlockWithStates {
     
     BlockWithStates(String name, String[] states) {
         this.blockName = name;
-        // todo read states and assign
+        this.states = new HashMap<>();
+        for (int i=0; i<states.length-1; i+=2) {
+            // System.out.printf("put %s as %s\n", states[i], states[i+1]);
+            this.states.put(states[i], states[i+1]);
+        }
     }
 }
 
@@ -58,8 +63,11 @@ public class BlockMap {
             String[] fields = line.split("\t");
             if (fields.length < 2) {
                 continue;
+            } else if (fields.length == 2) {
+                map.put(fields[0], new BlockWithStates(fields[1]));
+            } else {
+                map.put(fields[0], new BlockWithStates(fields[1], Arrays.copyOfRange(fields, 2, fields.length)));
             }
-            map.put(fields[0], new BlockWithStates(fields[1]));
         }
         warned = new HashSet<>();
     }
