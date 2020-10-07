@@ -1145,19 +1145,7 @@ Fire (Age 6)	minecraft:fire
 	minecraft:fire_coral_fan						
 	minecraft:fire_coral_wall_fan						
 	minecraft:fletching_table						
-Dandelion Flower Pot	minecraft:flower_pot						
 Flower Pot	minecraft:flower_pot						
-Jungle sapling Flower Pot	minecraft:flower_pot						
-Oak sapling Flower Pot	minecraft:flower_pot						
-Red mushroom Flower Pot	minecraft:flower_pot						
-Spruce sapling Flower Pot	minecraft:flower_pot						
-Cactus Flower Pot	minecraft:flower_pot						
-Dead bush Flower Pot	minecraft:flower_pot						
-	minecraft:flower_pot						
-Brown mushroom Flower Pot	minecraft:flower_pot						
-Birch sapling Flower Pot	minecraft:flower_pot						
-Poppy Flower Pot	minecraft:flower_pot						
-Fern Flower Pot	minecraft:flower_pot						
 	minecraft:frosted_ice						
 Burning Furnace ()	minecraft:furnace						
 Burning Furnace (Facing East)	minecraft:furnace	facing	east	lit	true		
@@ -1231,12 +1219,12 @@ Hopper (Output Facing West, Activated)	minecraft:hopper
 	minecraft:horn_coral_fan						
 	minecraft:horn_coral_wall_fan						
 Ice	minecraft:ice						
-	minecraft:infested_chiseled_stone_bricks						
-	minecraft:infested_cobblestone						
-	minecraft:infested_cracked_stone_bricks						
-	minecraft:infested_mossy_stone_bricks						
-	minecraft:infested_stone						
-	minecraft:infested_stone_bricks						
+Chiseled Stone Brick Monster Egg	minecraft:infested_chiseled_stone_bricks						
+Cobblestone Monster Egg	minecraft:infested_cobblestone						
+Cracked Stone Brick Monster Egg	minecraft:infested_cracked_stone_bricks						
+Mossy Stone Brick Monster Egg	minecraft:infested_mossy_stone_bricks						
+Stone Monster Egg	minecraft:infested_stone						
+Stone Brick Monster Egg	minecraft:infested_stone_bricks						
 Iron Bars 1	minecraft:iron_bars						
 Iron Bars	minecraft:iron_bars						
 Iron Block	minecraft:iron_block						
@@ -1640,31 +1628,31 @@ Potatoes (Growth level 4)	minecraft:potatoes
 Potatoes (Growth level 5)	minecraft:potatoes						
 Potatoes (Growth level 6)	minecraft:potatoes						
 Potatoes (Growth level 7)	minecraft:potatoes						
-	minecraft:potted_acacia_sapling						
+Acacia sapling Flower Pot	minecraft:potted_acacia_sapling						
 	minecraft:potted_allium						
 	minecraft:potted_azure_bluet						
 	minecraft:potted_bamboo						
-	minecraft:potted_birch_sapling						
+Birch sapling Flower Pot	minecraft:potted_birch_sapling						
 	minecraft:potted_blue_orchid						
-	minecraft:potted_brown_mushroom						
-	minecraft:potted_cactus						
+Brown mushroom Flower Pot	minecraft:potted_brown_mushroom						
+Cactus Flower Pot	minecraft:potted_cactus						
 	minecraft:potted_cornflower						
 	minecraft:potted_crimson_fungus						
 	minecraft:potted_crimson_roots						
-	minecraft:potted_dandelion						
+Dandelion Flower Pot	minecraft:potted_dandelion						
 	minecraft:potted_dark_oak_sapling						
-	minecraft:potted_dead_bush						
-	minecraft:potted_fern						
-	minecraft:potted_jungle_sapling						
+Dead bush Flower Pot	minecraft:potted_dead_bush						
+Fern Flower Pot	minecraft:potted_fern						
+Jungle sapling Flower Pot	minecraft:potted_jungle_sapling						
 	minecraft:potted_lily_of_the_valley						
-	minecraft:potted_oak_sapling						
+Oak sapling Flower Pot	minecraft:potted_oak_sapling						
 	minecraft:potted_orange_tulip						
 	minecraft:potted_oxeye_daisy						
 	minecraft:potted_pink_tulip						
-	minecraft:potted_poppy						
-	minecraft:potted_red_mushroom						
+Poppy Flower Pot	minecraft:potted_poppy						
+Red mushroom Flower Pot	minecraft:potted_red_mushroom						
 	minecraft:potted_red_tulip						
-	minecraft:potted_spruce_sapling						
+Spruce sapling Flower Pot	minecraft:potted_spruce_sapling						
 	minecraft:potted_warped_fungus						
 	minecraft:potted_warped_roots						
 	minecraft:potted_white_tulip						
