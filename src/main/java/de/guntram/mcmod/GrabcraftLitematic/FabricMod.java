@@ -5,6 +5,14 @@
  */
 package de.guntram.mcmod.GrabcraftLitematic;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.security.CodeSource;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents.EndTick;
@@ -29,7 +37,8 @@ public class FabricMod implements ClientModInitializer, EndTick {
         openDownloadScreen = new KeyBinding("key.grabcraft-litematic.download", GLFW_KEY_Z, category);
 //        CrowdinTranslate.downloadTranslations(MODID);
         KeyBindingHelper.registerKeyBinding(openDownloadScreen);
-        ClientTickEvents.END_CLIENT_TICK.register(this);        
+        extractBundledFile("blockmap.csv", "schematics");
+        ClientTickEvents.END_CLIENT_TICK.register(this);
     }
 
     @Override
@@ -39,4 +48,43 @@ public class FabricMod implements ClientModInitializer, EndTick {
         }
     }
     
+    private void extractBundledFile(String fileName, String targetDir) {
+        InputStream is;
+        try {
+            CodeSource src = this.getClass().getProtectionDomain().getCodeSource();
+            if (src != null) {
+                URL jar = src.getLocation();
+                is = jar.openStream();
+                ZipInputStream zis = new ZipInputStream(is);
+                ZipEntry entry;
+                while ((entry = zis.getNextEntry()) != null) {
+                    if (entry.getName().equalsIgnoreCase(fileName)) {
+                        extractZipEntry(zis, new File(targetDir, fileName));
+                        break;
+                    }
+                }
+                zis.close();
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace(System.err);
+        }
+    }
+
+    private void extractZipEntry(ZipInputStream zipStream, File outputFile) throws IOException {
+        FileOutputStream fos = null;
+        try {
+            fos = new FileOutputStream(outputFile);
+            byte[] buf=new byte[16384];
+            int length;
+            while ((length=zipStream.read(buf, 0, buf.length))>=0) {
+                fos.write(buf, 0, length);
+            }
+        } catch (IOException ex) {
+            throw ex;
+        } finally {
+            if (fos != null) {
+                fos.close();
+            }
+        }
+    }
 }
