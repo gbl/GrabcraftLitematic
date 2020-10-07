@@ -13,7 +13,9 @@ Acacia Leaves (No Decay and Check Decay)	minecraft:acacia_leaves
 Acacia Wood Stairs (West, Upside-down)	minecraft:acacia_stairs						
 	minecraft:acacia_trapdoor						
 	minecraft:acacia_wall_sign						
-Acacia Wood, Facing East/West	minecraft:acacia_wood						
+	minecraft:acacia_wood	axis	y				
+Acacia Wood, Facing East/West	minecraft:acacia_wood	axis	x				
+	minecraft:acacia_wood	axis	z				
 	minecraft:activator_rail						
 	minecraft:air						
 	minecraft:allium						
@@ -700,14 +702,14 @@ Birch Wood Plank	minecraft:birch_planks
 	minecraft:birch_slab	type	double				
  (Birch Wood, Upper)	minecraft:birch_slab	type	top				
  (Birch Wood, Bottom)	minecraft:birch_slab	type	bottom				
-Birch Wood Stairs (East, Normal)	minecraft:birch_stairs	half	bottom	facing	east		
-Birch Wood Stairs (East, Upside-down)	minecraft:birch_stairs	half	top	facing	east		
-Birch Wood Stairs (North, Normal)	minecraft:birch_stairs	half	bottom	facing	north		
-Birch Wood Stairs (North, Upside-down)	minecraft:birch_stairs	half	top	facing	north		
-Birch Wood Stairs (South, Normal)	minecraft:birch_stairs	half	bottom	facing	south		
-Birch Wood Stairs (South, Upside-down)	minecraft:birch_stairs	half	top	facing	south		
-Birch Wood Stairs (West, Normal)	minecraft:birch_stairs	half	bottom	facing	west		
-Birch Wood Stairs (West, Upside-down)	minecraft:birch_stairs	half	top	facing	west		
+Birch Wood Stairs (East, Normal)	minecraft:birch_stairs	half	bottom	facing	west		
+Birch Wood Stairs (East, Upside-down)	minecraft:birch_stairs	half	top	facing	west		
+Birch Wood Stairs (North, Normal)	minecraft:birch_stairs	half	bottom	facing	south		
+Birch Wood Stairs (North, Upside-down)	minecraft:birch_stairs	half	top	facing	south		
+Birch Wood Stairs (South, Normal)	minecraft:birch_stairs	half	bottom	facing	north		
+Birch Wood Stairs (South, Upside-down)	minecraft:birch_stairs	half	top	facing	north		
+Birch Wood Stairs (West, Normal)	minecraft:birch_stairs	half	bottom	facing	east		
+Birch Wood Stairs (West, Upside-down)	minecraft:birch_stairs	half	top	facing	east		
 	minecraft:birch_trapdoor						
 	minecraft:birch_wall_sign						
 	minecraft:birch_wood						
@@ -748,14 +750,14 @@ Bookshelf	minecraft:bookshelf
 	minecraft:brain_coral_wall_fan						
 Brewing Stand (Slot 1 Unactive, Slot 2 Unactive, Slot 3 Unac	minecraft:brewing_stand						
 	minecraft:brick_slab						
-Brick Stairs (East, Normal)	minecraft:brick_stairs	half	bottom	facing	east		
-Brick Stairs (East, Upside-down)	minecraft:brick_stairs	half	top	facing	east		
-Brick Stairs (North, Normal)	minecraft:brick_stairs	half	bottom	facing	north		
-Brick Stairs (North, Upside-down)	minecraft:brick_stairs	half	top	facing	north		
-Brick Stairs (South, Normal)	minecraft:brick_stairs	half	bottom	facing	south		
-Brick Stairs (South, Upside-down)	minecraft:brick_stairs	half	top	facing	south		
-Brick Stairs (West, Normal)	minecraft:brick_stairs	half	bottom	facing	west		
-Brick Stairs (West, Upside-down)	minecraft:brick_stairs	half	top	facing	west		
+Brick Stairs (East, Normal)	minecraft:brick_stairs	half	bottom	facing	west		
+Brick Stairs (East, Upside-down)	minecraft:brick_stairs	half	top	facing	west		
+Brick Stairs (North, Normal)	minecraft:brick_stairs	half	bottom	facing	south		
+Brick Stairs (North, Upside-down)	minecraft:brick_stairs	half	top	facing	south		
+Brick Stairs (South, Normal)	minecraft:brick_stairs	half	bottom	facing	north		
+Brick Stairs (South, Upside-down)	minecraft:brick_stairs	half	top	facing	north		
+Brick Stairs (West, Normal)	minecraft:brick_stairs	half	bottom	facing	east		
+Brick Stairs (West, Upside-down)	minecraft:brick_stairs	half	top	facing	east		
 	minecraft:brick_wall						
 Bricks	minecraft:bricks						
 	minecraft:brown_banner						
@@ -810,14 +812,14 @@ Cobblestone	minecraft:cobblestone
 Double Cobblestone Slab	minecraft:cobblestone_slab	type	double				
 Cobblestone (Upper)	minecraft:cobblestone_slab	type	top				
 Cobblestone Slab	minecraft:cobblestone_slab	type	bottom				
-Cobblestone Stairs (East, Normal)	minecraft:cobblestone_stairs	half	bottom	facing	east		
-Cobblestone Stairs (East, Upside-down)	minecraft:cobblestone_stairs	half	top	facing	east		
-Cobblestone Stairs (North, Normal)	minecraft:cobblestone_stairs	half	bottom	facing	north		
-Cobblestone Stairs (North, Upside-down)	minecraft:cobblestone_stairs	half	top	facing	north		
-Cobblestone Stairs (South, Normal)	minecraft:cobblestone_stairs	half	bottom	facing	south		
-Cobblestone Stairs (South, Upside-down)	minecraft:cobblestone_stairs	half	top	facing	south		
-Cobblestone Stairs (West, Normal)	minecraft:cobblestone_stairs	half	bottom	facing	west		
-Cobblestone Stairs (West, Upside-down)	minecraft:cobblestone_stairs	half	top	facing	west		
+Cobblestone Stairs (East, Normal)	minecraft:cobblestone_stairs	half	bottom	facing	west		
+Cobblestone Stairs (East, Upside-down)	minecraft:cobblestone_stairs	half	top	facing	west		
+Cobblestone Stairs (North, Normal)	minecraft:cobblestone_stairs	half	bottom	facing	south		
+Cobblestone Stairs (North, Upside-down)	minecraft:cobblestone_stairs	half	top	facing	south		
+Cobblestone Stairs (South, Normal)	minecraft:cobblestone_stairs	half	bottom	facing	north		
+Cobblestone Stairs (South, Upside-down)	minecraft:cobblestone_stairs	half	top	facing	north		
+Cobblestone Stairs (West, Normal)	minecraft:cobblestone_stairs	half	bottom	facing	east		
+Cobblestone Stairs (West, Upside-down)	minecraft:cobblestone_stairs	half	top	facing	east		
 Cobblestone Wall	minecraft:cobblestone_wall						
 Cobweb	minecraft:cobweb						
 	minecraft:cocoa						
@@ -828,7 +830,7 @@ Cobweb	minecraft:cobweb
 	minecraft:cornflower						
 	minecraft:cracked_nether_bricks						
 	minecraft:cracked_polished_blackstone_bricks						
-	minecraft:cracked_stone_bricks						
+Cracked Stone Bricks	minecraft:cracked_stone_bricks						
 Crafting Table	minecraft:crafting_table						
 	minecraft:creeper_head						
 	minecraft:creeper_wall_head						
@@ -865,7 +867,7 @@ Crafting Table	minecraft:crafting_table
 	minecraft:cyan_terracotta						
 	minecraft:cyan_wool						
 	minecraft:damaged_anvil						
-	minecraft:dandelion						
+Dandelion	minecraft:dandelion						
 	minecraft:dark_oak_button						
 	minecraft:dark_oak_door						
 	minecraft:dark_oak_fence						
@@ -880,14 +882,14 @@ Standing Sign (NorthWest)	minecraft:dark_oak_sign
 Standing Sign (SouthEast)	minecraft:dark_oak_sign						
 Standing Sign (SouthWest)	minecraft:dark_oak_sign						
  Dark Oak Wood Slab (Upper)	minecraft:dark_oak_slab	type	top				
-Dark Oak Wood Stairs (East, Normal)	minecraft:dark_oak_stairs	half	bottom	facing	east		
-Dark Oak Wood Stairs (East, Upside-down)	minecraft:dark_oak_stairs	half	top	facing	east		
-Dark Oak Wood Stairs (North, Normal)	minecraft:dark_oak_stairs	half	bottom	facing	north		
-Dark Oak Wood Stairs (North, Upside-down)	minecraft:dark_oak_stairs	half	top	facing	north		
-Dark Oak Wood Stairs (South, Normal)	minecraft:dark_oak_stairs	half	bottom	facing	south		
-Dark Oak Wood Stairs (South, Upside-down)	minecraft:dark_oak_stairs	half	top	facing	south		
-Dark Oak Wood Stairs (West, Normal)	minecraft:dark_oak_stairs	half	bottom	facing	west		
-Dark Oak Wood Stairs (West, Upside-down)	minecraft:dark_oak_stairs	half	top	facing	west		
+Dark Oak Wood Stairs (East, Normal)	minecraft:dark_oak_stairs	half	bottom	facing	west		
+Dark Oak Wood Stairs (East, Upside-down)	minecraft:dark_oak_stairs	half	top	facing	west		
+Dark Oak Wood Stairs (North, Normal)	minecraft:dark_oak_stairs	half	bottom	facing	south		
+Dark Oak Wood Stairs (North, Upside-down)	minecraft:dark_oak_stairs	half	top	facing	south		
+Dark Oak Wood Stairs (South, Normal)	minecraft:dark_oak_stairs	half	bottom	facing	north		
+Dark Oak Wood Stairs (South, Upside-down)	minecraft:dark_oak_stairs	half	top	facing	north		
+Dark Oak Wood Stairs (West, Normal)	minecraft:dark_oak_stairs	half	bottom	facing	east		
+Dark Oak Wood Stairs (West, Upside-down)	minecraft:dark_oak_stairs	half	top	facing	east		
 	minecraft:dark_oak_trapdoor						
 	minecraft:dark_oak_wall_sign						
 	minecraft:dark_oak_wood						
@@ -959,7 +961,14 @@ Ender Chest (Facing East)	minecraft:ender_chest
 Ender Chest (Facing North)	minecraft:ender_chest						
 	minecraft:ender_chest						
 	minecraft:ender_chest						
-	minecraft:farmland						
+Farmland (Dry Land)	minecraft:farmland	moisture	0				
+Farmland (Wet level 1)	minecraft:farmland	moisture	1				
+	minecraft:farmland	moisture	2				
+	minecraft:farmland	moisture	3				
+	minecraft:farmland	moisture	4				
+	minecraft:farmland	moisture	5				
+	minecraft:farmland	moisture	6				
+Farmland (Fully Hydrated)	minecraft:farmland	moisture	7				
 	minecraft:fern						
 	minecraft:fire						
 	minecraft:fire_coral						
@@ -981,14 +990,14 @@ Birch sapling Flower Pot	minecraft:flower_pot
 Poppy Flower Pot	minecraft:flower_pot						
 Fern Flower Pot	minecraft:flower_pot						
 	minecraft:frosted_ice						
-Burning Furnace (Facing East)	minecraft:furnace						
-Burning Furnace (Facing South)	minecraft:furnace						
-Burning Furnace (Facing West)	minecraft:furnace						
-	minecraft:furnace						
-Furnace (Facing East)	minecraft:furnace						
-Furnace (Facing North)	minecraft:furnace						
-Furnace (Facing West)	minecraft:furnace						
-	minecraft:furnace						
+Burning Furnace (Facing East)	minecraft:furnace	facing	east	lit	true		
+Burning Furnace (Facing North)	minecraft:furnace	facing	north	lit	true		
+Burning Furnace (Facing South)	minecraft:furnace	facing	south	lit	true		
+Burning Furnace (Facing West)	minecraft:furnace	facing	west	lit	true		
+Furnace (Facing East)	minecraft:furnace	facing	east	lit	false		
+Furnace (Facing North)	minecraft:furnace	facing	north	lit	false		
+Furnace (Facing South)	minecraft:furnace	facing	south	lit	false		
+Furnace (Facing West)	minecraft:furnace	facing	west	lit	false		
 	minecraft:gilded_blackstone						
 Glass	minecraft:glass						
 Glass Pane	minecraft:glass_pane						
@@ -1080,10 +1089,10 @@ Jukebox	minecraft:jukebox
 	minecraft:jungle_wood						
 	minecraft:kelp						
 	minecraft:kelp_plant						
-Ladder (facing east)	minecraft:ladder						
-Ladder (facing north)	minecraft:ladder						
-Ladder (facing south)	minecraft:ladder						
-Ladder (facing west)	minecraft:ladder						
+Ladder (facing east)	minecraft:ladder	facing	west				
+Ladder (facing north)	minecraft:ladder	facing	south				
+Ladder (facing south)	minecraft:ladder	facing	north				
+Ladder (facing west)	minecraft:ladder	facing	east				
 	minecraft:lantern						
 	minecraft:lapis_block						
 	minecraft:lapis_ore						
@@ -1153,7 +1162,7 @@ Lime Wool	minecraft:lime_wool
 	minecraft:magenta_terracotta						
 Magenta Wool	minecraft:magenta_wool						
 	minecraft:magma_block						
-	minecraft:melon						
+Melon Block	minecraft:melon						
 	minecraft:melon_stem						
 	minecraft:mossy_cobblestone						
 	minecraft:mossy_cobblestone_slab						
@@ -1180,10 +1189,10 @@ Nether Brick Fence	minecraft:nether_brick_fence
 	minecraft:netherite_block						
 Netherrack	minecraft:netherrack						
 Note Block	minecraft:note_block						
-Wooden Button (Facing East, Inactive)	minecraft:oak_button						
-Wooden Button (Facing North, Inactive)	minecraft:oak_button						
-Wooden Button (Facing South, Inactive)	minecraft:oak_button						
-Wooden Button (Facing West, Inactive)	minecraft:oak_button						
+Wooden Button (Facing East, Inactive)	minecraft:oak_button	face	wall	facing	west	powered	false
+Wooden Button (Facing North, Inactive)	minecraft:oak_button	face	wall	facing	south	powered	false
+Wooden Button (Facing South, Inactive)	minecraft:oak_button	face	wall	facing	north	powered	false
+Wooden Button (Facing West, Inactive)	minecraft:oak_button	face	wall	facing	east	powered	false
 Oak Door (Facing East, Closed, Lower)	minecraft:oak_door						
 Oak Door (Facing East, Opened, Lower)	minecraft:oak_door						
 Oak Door (Facing North, Opened, Lower)	minecraft:oak_door						
@@ -1195,16 +1204,16 @@ Oak Door (Facing West, Closed, Lower)	minecraft:oak_door
 Oak Door (Hinge Left, Unpowered, Upper	minecraft:oak_door						
 Oak Door (Hinge Right, Unpowered, Upper)	minecraft:oak_door						
 Oak Fence	minecraft:oak_fence						
-Oak Fence Gate (Facing East, Closed)	minecraft:oak_fence_gate						
-Oak Fence Gate (Facing North, Closed)	minecraft:oak_fence_gate						
-Oak Fence Gate (Facing South, Closed)	minecraft:oak_fence_gate						
-Oak Fence Gate (Facing West, Closed)	minecraft:oak_fence_gate						
+Oak Fence Gate (Facing East, Closed)	minecraft:oak_fence_gate	facing	west	open	false		
+Oak Fence Gate (Facing North, Closed)	minecraft:oak_fence_gate	facing	south	open	false		
+Oak Fence Gate (Facing South, Closed)	minecraft:oak_fence_gate	facing	north	open	false		
+Oak Fence Gate (Facing West, Closed)	minecraft:oak_fence_gate	facing	east	open	false		
 Oak Leaves	minecraft:oak_leaves						
 Oak Leaves (No Decay)	minecraft:oak_leaves						
 Oak Leaves (No Decay and Check Decay)	minecraft:oak_leaves						
-Oak Wood	minecraft:oak_log						
-Oak Wood (facing east/west)	minecraft:oak_log						
-Oak Wood (facing north/south)	minecraft:oak_log						
+Oak Wood	minecraft:oak_log	axis	y				
+Oak Wood (facing east/west)	minecraft:oak_log	axis	x				
+Oak Wood (facing north/south)	minecraft:oak_log	axis	z				
 Oak Wood Plank	minecraft:oak_planks						
 Wooden Pressure Plate (Unactive)	minecraft:oak_pressure_plate						
 	minecraft:oak_sapling						
@@ -1212,34 +1221,35 @@ Wooden Pressure Plate (Unactive)	minecraft:oak_pressure_plate
 Oak Wood Slab (Bottom)	minecraft:oak_slab	type	bottom				
  Oak Wood Slab (Upper)	minecraft:oak_slab	type	top				
 Double Oak Wood Slab	minecraft:oak_slab	type	double				
-Oak Wood Stairs (East, Normal)	minecraft:oak_stairs	half	bottom	facing	east		
-Oak Wood Stairs (East, Upside-down)	minecraft:oak_stairs	half	top	facing	east		
-Oak Wood Stairs (North, Normal)	minecraft:oak_stairs	half	bottom	facing	north		
-Oak Wood Stairs (North, Upside-down)	minecraft:oak_stairs	half	top	facing	north		
-Oak Wood Stairs (South, Normal)	minecraft:oak_stairs	half	bottom	facing	south		
-Oak Wood Stairs (South, Upside-down)	minecraft:oak_stairs	half	top	facing	south		
-Oak Wood Stairs (West, Normal)	minecraft:oak_stairs	half	bottom	facing	west		
-Oak Wood Stairs (West, Upside-down)	minecraft:oak_stairs	half	top	facing	west		
+Oak Wood Stairs (East, Normal)	minecraft:oak_stairs	half	bottom	facing	west		
+Oak Wood Stairs (East, Upside-down)	minecraft:oak_stairs	half	top	facing	west		
+Oak Wood Stairs (North, Normal)	minecraft:oak_stairs	half	bottom	facing	south		
+Oak Wood Stairs (North, Upside-down)	minecraft:oak_stairs	half	top	facing	south		
+Oak Wood Stairs (South, Normal)	minecraft:oak_stairs	half	bottom	facing	north		
+Oak Wood Stairs (South, Upside-down)	minecraft:oak_stairs	half	top	facing	north		
+Oak Wood Stairs (West, Normal)	minecraft:oak_stairs	half	bottom	facing	east		
+Oak Wood Stairs (West, Upside-down)	minecraft:oak_stairs	half	top	facing	east		
+	Unfortunately, trapdoors are wrong in GrabCraft; west and north are swapped.						
 Wooden Trapdoor (East from block, Closed, Bottom half)	minecraft:oak_trapdoor	half	bottom	facing	east	open	false
 Wooden Trapdoor (East from block, Closed, Top Half)	minecraft:oak_trapdoor	half	top	facing	east	open	false
 Wooden Trapdoor (East from block, Open, Bottom half)	minecraft:oak_trapdoor	half	bottom	facing	east	open	true
 Wooden Trapdoor (East from block, Open, Top Half)	minecraft:oak_trapdoor	half	top	facing	east	open	true
-Wooden Trapdoor (North from block, Closed, Bottom half)	minecraft:oak_trapdoor	half	bottom	facing	north	open	false
-Wooden Trapdoor (North from block, Closed, Top Half)	minecraft:oak_trapdoor	half	top	facing	north	open	false
-Wooden Trapdoor (North from block, Open, Bottom half)	minecraft:oak_trapdoor	half	bottom	facing	north	open	true
-Wooden Trapdoor (North from block, Open, Top Half)	minecraft:oak_trapdoor	half	top	facing	north	open	true
-Wooden Trapdoor (South from block, Closed, Bottom half)	minecraft:oak_trapdoor	half	bottom	facing	south	open	false
-Wooden Trapdoor (South from block, Closed, Top Half)	minecraft:oak_trapdoor	half	top	facing	south	open	false
-Wooden Trapdoor (South from block, Open, Bottom half)	minecraft:oak_trapdoor	half	bottom	facing	south	open	true
-Wooden Trapdoor (South from block, Open, Top Half)	minecraft:oak_trapdoor	half	top	facing	south	open	true
-Wooden Trapdoor (West from block, Closed, Bottom half)	minecraft:oak_trapdoor	half	bottom	facing	west	open	false
-Wooden Trapdoor (West from block, Closed, Top Half)	minecraft:oak_trapdoor	half	top	facing	west	open	false
-Wooden Trapdoor (West from block, Open, Bottom half)	minecraft:oak_trapdoor	half	bottom	facing	west	open	true
-Wooden Trapdoor (West from block, Open, Top Half)	minecraft:oak_trapdoor	half	top	facing	west	open	true
-Wall Sign, north	minecraft:oak_wall_sign						
-Wall Sign, south	minecraft:oak_wall_sign						
-Wall Sign, west	minecraft:oak_wall_sign						
-Wall-mounted Sign Block west-northwest	minecraft:oak_wall_sign						
+Wooden Trapdoor (North from block, Closed, Bottom half)	minecraft:oak_trapdoor	half	bottom	facing	west	open	false
+Wooden Trapdoor (North from block, Closed, Top Half)	minecraft:oak_trapdoor	half	top	facing	west	open	false
+Wooden Trapdoor (North from block, Open, Bottom half)	minecraft:oak_trapdoor	half	bottom	facing	west	open	true
+Wooden Trapdoor (North from block, Open, Top Half)	minecraft:oak_trapdoor	half	top	facing	west	open	true
+Wooden Trapdoor (South from block, Closed, Bottom half)	minecraft:oak_trapdoor	half	bottom	facing	north	open	false
+Wooden Trapdoor (South from block, Closed, Top Half)	minecraft:oak_trapdoor	half	top	facing	north	open	false
+Wooden Trapdoor (South from block, Open, Bottom half)	minecraft:oak_trapdoor	half	bottom	facing	north	open	true
+Wooden Trapdoor (South from block, Open, Top Half)	minecraft:oak_trapdoor	half	top	facing	north	open	true
+Wooden Trapdoor (West from block, Closed, Bottom half)	minecraft:oak_trapdoor	half	bottom	facing	south	open	false
+Wooden Trapdoor (West from block, Closed, Top Half)	minecraft:oak_trapdoor	half	top	facing	south	open	false
+Wooden Trapdoor (West from block, Open, Bottom half)	minecraft:oak_trapdoor	half	bottom	facing	south	open	true
+Wooden Trapdoor (West from block, Open, Top Half)	minecraft:oak_trapdoor	half	top	facing	south	open	true
+Wall Sign, north	minecraft:oak_wall_sign	facing	south				
+Wall Sign, south	minecraft:oak_wall_sign	facing	north				
+Wall Sign, west	minecraft:oak_wall_sign	facing	east				
+Wall-mounted Sign Block west-northwest	minecraft:oak_wall_sign	facing	west				
 	minecraft:oak_wood						
 	minecraft:observer						
 	minecraft:obsidian						
@@ -1343,6 +1353,10 @@ Powered Rail (Sloped, Ascending to the West, Not Active)	minecraft:powered_rail
 	minecraft:prismarine_slab						
 	minecraft:prismarine_stairs						
 	minecraft:prismarine_wall						
+	Since 1.13. pumpkins are uncarved by default, so don’t have facing any more.						
+Pumpkin (Facing North)	minecraft:pumpkin						
+Pumpkin (Facing West)	minecraft:pumpkin						
+	minecraft:pumpkin						
 	minecraft:pumpkin						
 	minecraft:pumpkin_stem						
 	minecraft:purple_banner						
@@ -1368,14 +1382,14 @@ Pillar Quartz Block (north-south)	minecraft:quartz_pillar
 Quartz Slab	minecraft:quartz_slab	type	bottom				
 Quartz Slab (Upper)	minecraft:quartz_slab	type	top				
 Double Quartz Slab	minecraft:quartz_slab	type	double				
-Quartz Stairs (East, Normal)	minecraft:quartz_stairs	half	bottom	facing	east		
-Quartz Stairs (East, Upside-down)	minecraft:quartz_stairs	half	top	facing	east		
-Quartz Stairs (North, Normal)	minecraft:quartz_stairs	half	bottom	facing	north		
-Quartz Stairs (North, Upside-down)	minecraft:quartz_stairs	half	top	facing	north		
-Quartz Stairs (South, Normal)	minecraft:quartz_stairs	half	bottom	facing	south		
-Quartz Stairs (South, Upside-down)	minecraft:quartz_stairs	half	top	facing	south		
-Quartz Stairs (West, Normal)	minecraft:quartz_stairs	half	bottom	facing	west		
-Quartz Stairs (West, Upside-down)	minecraft:quartz_stairs	half	top	facing	west		
+Quartz Stairs (East, Normal)	minecraft:quartz_stairs	half	bottom	facing	west		
+Quartz Stairs (East, Upside-down)	minecraft:quartz_stairs	half	top	facing	west		
+Quartz Stairs (North, Normal)	minecraft:quartz_stairs	half	bottom	facing	south		
+Quartz Stairs (North, Upside-down)	minecraft:quartz_stairs	half	top	facing	south		
+Quartz Stairs (South, Normal)	minecraft:quartz_stairs	half	bottom	facing	north		
+Quartz Stairs (South, Upside-down)	minecraft:quartz_stairs	half	top	facing	north		
+Quartz Stairs (West, Normal)	minecraft:quartz_stairs	half	bottom	facing	east		
+Quartz Stairs (West, Upside-down)	minecraft:quartz_stairs	half	top	facing	east		
 Rail	minecraft:rail						
 Rail (sloped, ascending to east)	minecraft:rail						
 Rail (sloped, ascending to south)	minecraft:rail						
@@ -1419,14 +1433,14 @@ Sandstone	minecraft:sandstone
 Sandstone Slab	minecraft:sandstone_slab	type	bottom				
 Sandstone Slab (Upper)	minecraft:sandstone_slab	type	top				
 	minecraft:sandstone_slab	type	double				
-Sandstone Stairs (East, Normal)	minecraft:sandstone_stairs	half	bottom	facing	east		
-Sandstone Stairs (East, Upside-down)	minecraft:sandstone_stairs	half	top	facing	east		
-Sandstone Stairs (North, Normal)	minecraft:sandstone_stairs	half	bottom	facing	north		
-Sandstone Stairs (North, Upside-down)	minecraft:sandstone_stairs	half	top	facing	north		
-Sandstone Stairs (South, Normal)	minecraft:sandstone_stairs	half	bottom	facing	south		
-Sandstone Stairs (South, Upside-down)	minecraft:sandstone_stairs	half	top	facing	south		
-Sandstone Stairs (West, Normal)	minecraft:sandstone_stairs	half	bottom	facing	west		
-Sandstone Stairs (West, Upside-down)	minecraft:sandstone_stairs	half	top	facing	west		
+Sandstone Stairs (East, Normal)	minecraft:sandstone_stairs	half	bottom	facing	west		
+Sandstone Stairs (East, Upside-down)	minecraft:sandstone_stairs	half	top	facing	west		
+Sandstone Stairs (North, Normal)	minecraft:sandstone_stairs	half	bottom	facing	south		
+Sandstone Stairs (North, Upside-down)	minecraft:sandstone_stairs	half	top	facing	south		
+Sandstone Stairs (South, Normal)	minecraft:sandstone_stairs	half	bottom	facing	north		
+Sandstone Stairs (South, Upside-down)	minecraft:sandstone_stairs	half	top	facing	north		
+Sandstone Stairs (West, Normal)	minecraft:sandstone_stairs	half	bottom	facing	east		
+Sandstone Stairs (West, Upside-down)	minecraft:sandstone_stairs	half	top	facing	east		
 	minecraft:sandstone_wall						
 	minecraft:scaffolding						
 	minecraft:sea_lantern						
@@ -1477,14 +1491,14 @@ Spruce Wood Plank	minecraft:spruce_planks
  Spruce Wood Slab (Bottom)	minecraft:spruce_slab	type	bottom				
  Spruce Wood Slab (Upper)	minecraft:spruce_slab	type	top				
 Double Spruce Wood Slab	minecraft:spruce_slab	type	double				
-Spruce Wood Stairs (East, Normal)	minecraft:spruce_stairs	half	bottom	facing	east		
-Spruce Wood Stairs (East, Upside-down)	minecraft:spruce_stairs	half	top	facing	east		
-Spruce Wood Stairs (North, Normal)	minecraft:spruce_stairs	half	bottom	facing	north		
-Spruce Wood Stairs (North, Upside-down)	minecraft:spruce_stairs	half	top	facing	north		
-Spruce Wood Stairs (South, Normal)	minecraft:spruce_stairs	half	bottom	facing	south		
-Spruce Wood Stairs (South, Upside-down)	minecraft:spruce_stairs	half	top	facing	south		
-Spruce Wood Stairs (West, Normal)	minecraft:spruce_stairs	half	bottom	facing	west		
-Spruce Wood Stairs (West, Upside-down)	minecraft:spruce_stairs	half	top	facing	west		
+Spruce Wood Stairs (East, Normal)	minecraft:spruce_stairs	half	bottom	facing	west		
+Spruce Wood Stairs (East, Upside-down)	minecraft:spruce_stairs	half	top	facing	west		
+Spruce Wood Stairs (North, Normal)	minecraft:spruce_stairs	half	bottom	facing	south		
+Spruce Wood Stairs (North, Upside-down)	minecraft:spruce_stairs	half	top	facing	south		
+Spruce Wood Stairs (South, Normal)	minecraft:spruce_stairs	half	bottom	facing	north		
+Spruce Wood Stairs (South, Upside-down)	minecraft:spruce_stairs	half	top	facing	north		
+Spruce Wood Stairs (West, Normal)	minecraft:spruce_stairs	half	bottom	facing	east		
+Spruce Wood Stairs (West, Upside-down)	minecraft:spruce_stairs	half	top	facing	east		
 	minecraft:spruce_trapdoor						
 	minecraft:spruce_wall_sign						
 Spruce Wood	minecraft:spruce_wood						
@@ -1496,20 +1510,20 @@ Stone	minecraft:stone
 Stone Brick Slab (Upper)	minecraft:stone_brick_slab	type	top				
 Stone Brick Slab	minecraft:stone_brick_slab	type	bottom				
 Double Stone Brick Slab	minecraft:stone_brick_slab	type	double				
-Stone Brick Stairs (East)	minecraft:stone_brick_stairs	half	bottom	facing	east		
-Stone Brick Stairs (East, Upside-down)	minecraft:stone_brick_stairs	half	top	facing	east		
-Stone Brick Stairs (North, Normal)	minecraft:stone_brick_stairs	half	bottom	facing	north		
-Stone Brick Stairs (North, Upside-down)	minecraft:stone_brick_stairs	half	top	facing	north		
-Stone Brick Stairs (South, Normal)	minecraft:stone_brick_stairs	half	bottom	facing	south		
-Stone Brick Stairs (South, Upside-down)	minecraft:stone_brick_stairs	half	top	facing	south		
-Stone Brick Stairs (West)	minecraft:stone_brick_stairs	half	bottom	facing	west		
-Stone Brick Stairs (West, Upside-down)	minecraft:stone_brick_stairs	half	top	facing	west		
+Stone Brick Stairs (East)	minecraft:stone_brick_stairs	half	bottom	facing	west		
+Stone Brick Stairs (East, Upside-down)	minecraft:stone_brick_stairs	half	top	facing	west		
+Stone Brick Stairs (North, Normal)	minecraft:stone_brick_stairs	half	bottom	facing	south		
+Stone Brick Stairs (North, Upside-down)	minecraft:stone_brick_stairs	half	top	facing	south		
+Stone Brick Stairs (South, Normal)	minecraft:stone_brick_stairs	half	bottom	facing	north		
+Stone Brick Stairs (South, Upside-down)	minecraft:stone_brick_stairs	half	top	facing	north		
+Stone Brick Stairs (West)	minecraft:stone_brick_stairs	half	bottom	facing	east		
+Stone Brick Stairs (West, Upside-down)	minecraft:stone_brick_stairs	half	top	facing	east		
 	minecraft:stone_brick_wall						
 Stone Bricks	minecraft:stone_bricks						
-Stone Button (Facing North, Inactive)	minecraft:stone_button						
-Stone Button (Facing South, Inactive)	minecraft:stone_button						
-Stone Button (Facing West, Inactive)	minecraft:stone_button						
-Stone Button (Facing East, Inactive)	minecraft:stone_button						
+Stone Button (Facing East, Inactive)	minecraft:stone_button	face	wall	facing	west	powered	false
+Stone Button (Facing North, Inactive)	minecraft:stone_button	face	wall	facing	south	powered	false
+Stone Button (Facing South, Inactive)	minecraft:stone_button	face	wall	facing	north	powered	false
+Stone Button (Facing West, Inactive)	minecraft:stone_button	face	wall	facing	east	powered	false
 Stone Pressure Plate (Unactive)	minecraft:stone_pressure_plate						
 Stone Slab	minecraft:stone_slab	type	bottom				
 Stone Slab (Upper)	minecraft:stone_slab	type	top				
@@ -1591,7 +1605,15 @@ Still Water	minecraft:water
 	minecraft:weeping_vines						
 	minecraft:weeping_vines_plant						
 	minecraft:wet_sponge						
-	minecraft:wheat						
+	All wheat types are mapped to age 0 here, as planting always creates age 0, so this makes it easier to verify the schematic						
+Wheat (Age 0)	minecraft:wheat	age	0				
+Wheat (Age 1)	minecraft:wheat	age	0				
+Wheat (Age 2)	minecraft:wheat	age	0				
+Wheat (Age 3)	minecraft:wheat	age	0				
+Wheat (Age 4)	minecraft:wheat	age	0				
+Wheat (Age 5)	minecraft:wheat	age	0				
+Wheat (Age 6)	minecraft:wheat	age	0				
+Wheat (Age 7)	minecraft:wheat	age	0				
 	minecraft:white_banner						
 Bed (North, Empty, Foot of the bed)	minecraft:white_bed						
 Bed (North, Empty, Head of the bed)	minecraft:white_bed						
