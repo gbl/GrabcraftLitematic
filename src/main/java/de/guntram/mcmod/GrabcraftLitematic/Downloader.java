@@ -22,7 +22,10 @@ class Downloader {
     private static final String urlStart = "https://www.grabcraft.com/minecraft/";
     private static final String urlRender = "https://www.grabcraft.com/js/RenderObject/";
     
+    private static String author;
+    
     public static String download(String urlString) {
+        author = "GrabcraftLitematica";
         if (!urlString.startsWith(urlStart)) {
             return "This seems to be wrong; needs to start with "+urlStart;
         }
@@ -40,7 +43,7 @@ class Downloader {
         String[] urlParts;
         try {
             urlParts = urlString.split("/");
-            downloadResult = downloadRenderObject(urlRender+renderObject, urlParts[4]);
+            downloadResult = downloadRenderObject(urlString, urlRender+renderObject, urlParts[4]);
         } catch (IOException ex) {
             return "Problem with schema data: "+ex.getMessage();
         } catch (IndexOutOfBoundsException ex) {
@@ -52,11 +55,21 @@ class Downloader {
     }
 
     private static String findRenderObjectInHTML(String urlString) throws IOException {
-        Pattern pattern = Pattern.compile("myRenderObject_[0-9]+.js");
+        Pattern renderObjectPattern = Pattern.compile("myRenderObject_[0-9]+.js");
+        String authorString = "Author:&nbsp;";
         try (BufferedReader in = new BufferedReader(new InputStreamReader(new URL(urlString).openStream()))) {
             String line;
             while ((line=in.readLine()) != null) {
-                Matcher matcher = pattern.matcher(line);
+                int pos;
+                if ((pos=line.indexOf(authorString)) > 0) {
+                    try {
+                        author=line.substring(pos+authorString.length());
+                        author=author.substring(0, author.indexOf("<"));
+                    } catch (IndexOutOfBoundsException ex) {
+                        author = "";
+                    }
+                }
+                Matcher matcher = renderObjectPattern.matcher(line);
                 if (matcher.find()) {
                     return matcher.group();
                 }
@@ -65,7 +78,7 @@ class Downloader {
         return null;
     }
     
-    private static String downloadRenderObject(String urlObject, String objectName) throws IOException {
+    private static String downloadRenderObject(String origURL, String urlObject, String objectName) throws IOException {
         RenderObject object = new RenderObject();
         InputStreamReader is = new InputStreamReader(new URL(urlObject).openStream());
         int c;
@@ -76,6 +89,8 @@ class Downloader {
         BlockMap map = new BlockMap(new File("schematics", "blockmap.csv"));
         Litematic schema = new Litematic(objectName, object.getSizeX(), object.getSizeY(), object.getSizeZ());
         Converter.run(object, map, schema);
+        schema.setAuthor(author);
+        schema.setDescription(origURL);
         schema.save(new File("schematics", objectName+".litematic"));
         return "Download to "+objectName+" ok";
     }
