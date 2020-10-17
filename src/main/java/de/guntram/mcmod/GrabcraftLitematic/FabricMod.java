@@ -51,6 +51,7 @@ public class FabricMod implements ClientModInitializer, EndTick {
     private void extractBundledFile(String fileName, String targetDir) {
         InputStream is;
         try {
+            new File(targetDir).mkdirs();
             CodeSource src = this.getClass().getProtectionDomain().getCodeSource();
             if (src != null) {
                 URL jar = src.getLocation();
