@@ -160,6 +160,6 @@ public class Litematic {
         generateStates();
         generatePalette();
         regions.put(name, region);
-        NbtIo.method_30614(data, file);
+        NbtIo.writeCompressed(data, file);
     }
 }

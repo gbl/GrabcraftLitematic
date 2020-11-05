@@ -7,6 +7,10 @@
         "client": [ "de.guntram.mcmod.GrabcraftLitematic.FabricMod" ]
     },
     "custom": {
+        "modupdater": {
+            "strategy": "json",
+            "url": "https://raw.githubusercontent.com/gbl/ModVersionInfo/master/GrabcraftLitematic.json"
+        }
     },
     "mixins": [
     ],
@@ -14,9 +18,16 @@
       "fabric": "*"
     },
     "recommends": {
-      "modmenu" : "*"
+      "modmenu" : "*",
+      "modupdater": ">=1.1.7"
     },
     "name": "GrabcraftLitematic",
     "description": "Download schemas from GrabCraft in Litematica format",
-    "authors": [ "Giselbaer" ]
+    "icon": "icon.png",
+    "authors": [ "Giselbaer" ],
+    "contact": {
+        "homepage": "https://www.curseforge.com/minecraft/mc-mods/grabcraftlitematic",
+        "sources": "https://github.com/gbl/GrabcraftLitematic",
+        "issues": "https://github.com/gbl/GrabcraftLitematic/issues"
+    }
 }
