@@ -43,8 +43,8 @@ class BlockWithStates {
 public class BlockMap {
     
     private Map<String, BlockWithStates> map;
-    public static final BlockWithStates BEDROCK = new BlockWithStates("minecraft:bedrock");
-    public static final BlockWithStates AIRBLOCK = new BlockWithStates("minecraft:air");
+    static final BlockWithStates BEDROCK = new BlockWithStates("minecraft:bedrock");
+    static final BlockWithStates AIRBLOCK = new BlockWithStates("minecraft:air");
     Set<String> warned;
     
     BlockMap(File file) throws IOException {

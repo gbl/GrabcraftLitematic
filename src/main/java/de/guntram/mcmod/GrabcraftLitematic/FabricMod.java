@@ -5,12 +5,14 @@
  */
 package de.guntram.mcmod.GrabcraftLitematic;
 
+import com.oneandone.compositejks.SslContextUtils;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.security.CodeSource;
+import java.security.GeneralSecurityException;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import net.fabricmc.api.ClientModInitializer;
@@ -34,6 +36,13 @@ public class FabricMod implements ClientModInitializer, EndTick {
     @Override
     public void onInitializeClient() {
         final String category="key.categories.grabcraft-litematic";
+        
+        try {
+            SslContextUtils.mergeWithSystem(this.getClass().getClassLoader().getResourceAsStream("cacerts"));
+        } catch (IOException | GeneralSecurityException ex) {
+            ex.printStackTrace();
+        }
+        
         openDownloadScreen = new KeyBinding("key.grabcraft-litematic.download", GLFW_KEY_Z, category);
 //        CrowdinTranslate.downloadTranslations(MODID);
         KeyBindingHelper.registerKeyBinding(openDownloadScreen);

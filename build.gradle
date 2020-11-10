@@ -47,6 +47,8 @@ dependencies {
     mappings   "net.fabricmc:yarn:${Versions['yarn_mappings']}:v2"
     modImplementation "net.fabricmc:fabric-loader:${Versions['loader_version']}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${Versions['fabric_version']}"
+    compile "com.oneandone:composite-jks:1.0"
+    include "com.oneandone:composite-jks:1.0"
     // modImplementation "io.github.cottonmc:cotton-client-commands:${Versions['ccc_version']}"
     // include    "io.github.cottonmc:cotton-client-commands:${Versions['ccc_version']}"
     // modImplementation "de.guntram.mcmod:crowdin-translate:1.1"
