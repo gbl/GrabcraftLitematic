@@ -108,6 +108,8 @@ public class Litematic {
         int nonAirBlocks = 0;
         
         int neededLongs = ((x*y*z * neededBits + 63 ) / 64 );
+        System.err.println("have "+palette.size()+" entries, need "+neededBits+" bits ");
+        System.err.println("x="+x+", y="+y+", z="+z+", need "+neededLongs+" longs");
         long[] longData = new long[neededLongs];
         int shift = 0;
         int longIndex = 0;
@@ -121,7 +123,10 @@ public class Litematic {
                     shift += neededBits;
                     if (shift >= 64) {
                         shift -= 64;
-                        longData[++longIndex] |= (state >>> (neededBits-shift));
+                        longIndex++;
+                        if (shift != 0) {
+                            longData[longIndex] |= (state >>> (neededBits-shift));
+                        }
 //                        System.out.println("=> next is now "+Long.toBinaryString(longData[longIndex]));
 //                        System.out.println("distributed a "+Long.toBinaryString(state)+", shift is "+shift+"\n"+
 //                                ", previous byte is "+Long.toBinaryString(longData[longIndex-1])+"\n"+

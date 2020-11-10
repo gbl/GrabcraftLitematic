@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
  */
 class Downloader {
     
-    private static final String urlStart = "https://www.grabcraft.com/minecraft/";
+    public static final String urlStart = "https://www.grabcraft.com/minecraft/";
     private static final String urlRender = "https://www.grabcraft.com/js/RenderObject/";
     
     private static String author;
@@ -27,13 +27,13 @@ class Downloader {
     public static String download(String urlString) {
         author = "GrabcraftLitematica";
         if (!urlString.startsWith(urlStart)) {
-            return "This seems to be wrong; needs to start with "+urlStart;
+            return "This seems to be wrong; needs to start with\n"+urlStart;
         }
         String renderObject;
         try {
             renderObject = findRenderObjectInHTML(urlString);
         } catch (IOException ex) {
-            return "Problem with URL: "+ex.getMessage();
+            return "Problem with URL:\n"+ex.getMessage();
         }
         if (renderObject == null) {
             return "No schema data found";
@@ -45,13 +45,14 @@ class Downloader {
             urlParts = urlString.split("/");
             downloadResult = downloadRenderObject(urlString, urlRender+renderObject, urlParts[4]);
         } catch (IOException ex) {
-            return "Problem with schema data: "+ex.getMessage();
+            return "Problem with schema data:\n "+ex.getMessage();
         } catch (IndexOutOfBoundsException ex) {
+            ex.printStackTrace(System.err);
             return "No object name in URL";
         } catch (IllegalStateException ex) {
-            return "bad file format: "+ex.getMessage();
+            return "bad file format:\n"+ex.getMessage();
         }
-        return "Downloaded to "+urlParts[4];
+        return "\nDownloaded to "+urlParts[4];
     }
 
     private static String findRenderObjectInHTML(String urlString) throws IOException {

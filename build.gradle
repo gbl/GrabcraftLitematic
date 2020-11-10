@@ -10,8 +10,8 @@ repositories {
 		url = "https://minecraft.guntram.de/maven/"
 	}
 	maven {
-        	name = 'CottonMC'
-	        url = 'http://server.bbkr.space:8081/artifactory/libs-release'
+        name = 'CottonMC'
+        url = 'http://server.bbkr.space:8081/artifactory/libs-release'
 	}    
 }
 
@@ -22,7 +22,7 @@ ext.Versions = new Properties()
 Versions.load(file("Versionfiles/mcversion-1.16.4.properties").newReader())
 
 archivesBaseName = "grabcraft-litematic"
-ext.projectVersion = "0.2"
+ext.projectVersion = "0.3"
 
 version = "${Versions['minecraft_version']}-fabric${Versions['fabric_versiononly']}-${project.projectVersion}"
 
