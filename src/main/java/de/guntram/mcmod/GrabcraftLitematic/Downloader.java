@@ -45,14 +45,14 @@ class Downloader {
             urlParts = urlString.split("/");
             downloadResult = downloadRenderObject(urlString, urlRender+renderObject, urlParts[4]);
         } catch (IOException ex) {
-            return "Problem with schema data:\n "+ex.getMessage();
+            return "Problem with schema data:\n"+ex.getMessage();
         } catch (IndexOutOfBoundsException ex) {
             ex.printStackTrace(System.err);
             return "No object name in URL";
         } catch (IllegalStateException ex) {
             return "bad file format:\n"+ex.getMessage();
         }
-        return "\nDownloaded to "+urlParts[4];
+        return downloadResult;
     }
 
     private static String findRenderObjectInHTML(String urlString) throws IOException {

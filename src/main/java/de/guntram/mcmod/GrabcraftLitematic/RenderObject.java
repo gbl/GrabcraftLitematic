@@ -53,6 +53,10 @@ public class RenderObject {
             data=gson.fromJson(reader, MAP_TYPE);
         }
         
+        if (data == null) {
+            throw new IOException("Grabcraft didn't return any data");
+        }
+        
         minX = minY = minZ = Integer.MAX_VALUE;
         maxX = maxY = maxZ = Integer.MIN_VALUE;
         for (Map.Entry<String, Map<String, Map<String, BlockInfo>>> pairY: data.entrySet()) {
