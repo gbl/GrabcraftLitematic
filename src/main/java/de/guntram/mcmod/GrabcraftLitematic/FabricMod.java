@@ -22,6 +22,8 @@ import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.options.KeyBinding;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import static org.lwjgl.glfw.GLFW.GLFW_KEY_Z;
 
 /**
@@ -36,9 +38,16 @@ public class FabricMod implements ClientModInitializer, EndTick, PreLaunchEntryp
 
     @Override
     public void onPreLaunch() {
+        Logger logger = LogManager.getLogger();
+        logger.info("Grabcraft-Litematic merging cacerts");
         try {
             SslContextUtils.mergeWithSystem(this.getClass().getClassLoader().getResourceAsStream("cacerts"));
+            logger.info("- seems to have worked ok");
         } catch (IOException | GeneralSecurityException ex) {
+            logger.info("- did not work, here's why:");
+            ex.printStackTrace();
+        } catch (Exception ex) {
+            logger.info("- whoa! what a fail!");
             ex.printStackTrace();
         }
     }
