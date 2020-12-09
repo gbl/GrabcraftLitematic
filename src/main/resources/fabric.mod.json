@@ -4,7 +4,8 @@
     "version": "${version}",
     "environment": "client",
     "entrypoints": {
-        "client": [ "de.guntram.mcmod.GrabcraftLitematic.FabricMod" ]
+        "client": [ "de.guntram.mcmod.GrabcraftLitematic.FabricMod" ],
+        "preLaunch": [ "de.guntram.mcmod.GrabcraftLitematic.FabricMod" ]
     },
     "custom": {
         "modupdater": {

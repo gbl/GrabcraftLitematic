@@ -19,6 +19,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents.EndTick;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.options.KeyBinding;
 import static org.lwjgl.glfw.GLFW.GLFW_KEY_Z;
@@ -27,21 +28,24 @@ import static org.lwjgl.glfw.GLFW.GLFW_KEY_Z;
  *
  * @author gbl
  */
-public class FabricMod implements ClientModInitializer, EndTick {
+public class FabricMod implements ClientModInitializer, EndTick, PreLaunchEntrypoint {
 
     static final String MODID="grabcraft-litematic";
     static final String MODNAME="GrabcraftLitematic";
     static KeyBinding openDownloadScreen;
 
     @Override
-    public void onInitializeClient() {
-        final String category="key.categories.grabcraft-litematic";
-        
+    public void onPreLaunch() {
         try {
             SslContextUtils.mergeWithSystem(this.getClass().getClassLoader().getResourceAsStream("cacerts"));
         } catch (IOException | GeneralSecurityException ex) {
             ex.printStackTrace();
         }
+    }
+
+    @Override
+    public void onInitializeClient() {
+        final String category="key.categories.grabcraft-litematic";
         
         openDownloadScreen = new KeyBinding("key.grabcraft-litematic.download", GLFW_KEY_Z, category);
 //        CrowdinTranslate.downloadTranslations(MODID);
