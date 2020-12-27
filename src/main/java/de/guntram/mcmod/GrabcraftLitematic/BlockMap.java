@@ -10,7 +10,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -20,25 +19,6 @@ import java.util.Set;
  *
  * @author gbl
  */
-
-class BlockWithStates {
-    String blockName;
-    Map<String, String> states;
-    
-    BlockWithStates(String name) {
-        this.blockName = name;
-        this.states = Collections.EMPTY_MAP;
-    }
-    
-    BlockWithStates(String name, String[] states) {
-        this.blockName = name;
-        this.states = new HashMap<>();
-        for (int i=0; i<states.length-1; i+=2) {
-            // System.out.printf("put %s as %s\n", states[i], states[i+1]);
-            this.states.put(states[i], states[i+1]);
-        }
-    }
-}
 
 public class BlockMap {
     
@@ -72,7 +52,7 @@ public class BlockMap {
         warned = new HashSet<>();
     }
     
-    BlockWithStates get(String block) {
+    public BlockWithStates get(String block) {
         BlockWithStates result = map.get(block);
         if (result != null) {
             return result;
@@ -83,5 +63,9 @@ public class BlockMap {
             }
             return BEDROCK;
         }
+    }
+    
+    public Map<String, BlockWithStates> getUsedBlocks() {
+        return map;
     }
 }

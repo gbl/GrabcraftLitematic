@@ -40,20 +40,30 @@ public class DownloadGui extends Screen {
         }
         urlInput.setSelected(true);
         this.setFocused(urlInput);
-        this.addButton(new AbstractButtonWidget(this.width/2-25, innerY+60, 50, 20, new LiteralText("Download")) {
+        this.addButton(new AbstractButtonWidget(this.width/2-25, innerY+60, 180, 20, new LiteralText("Download Litematic")) {
             @Override
             public void onClick(double x, double y) {
-                String downloadResult = Downloader.download(urlInput.getText());
-                if (downloadResult.contains("\n")) {
-                    String[] parts = downloadResult.split("\n");
-                    message1 = new LiteralText(parts[0]);
-                    message2 = new LiteralText(parts[1]);
-                } else {
-                    message1 = new LiteralText(downloadResult);
-                    message2 = null;
-                }
+                doDownload(false);
             }
         });
+        this.addButton(new AbstractButtonWidget(this.width/2-25, innerY+80, 180, 20, new LiteralText("Download Blockmap only")) {
+            @Override
+            public void onClick(double x, double y) {
+                doDownload(true);
+            }
+        });
+    }
+    
+    private void doDownload(boolean mapOnly) {
+        String downloadResult = Downloader.download(urlInput.getText(), mapOnly);
+        if (downloadResult.contains("\n")) {
+            String[] parts = downloadResult.split("\n");
+            message1 = new LiteralText(parts[0]);
+            message2 = new LiteralText(parts[1]);
+        } else {
+            message1 = new LiteralText(downloadResult);
+            message2 = null;
+        }
     }
     
     @Override
