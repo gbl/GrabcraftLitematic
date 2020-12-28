@@ -46,12 +46,14 @@ public class DownloadGui extends Screen {
                 doDownload(false);
             }
         });
-        this.addButton(new AbstractButtonWidget(this.width/2-90, innerY+80, 180, 20, new LiteralText("Download Blockmap only")) {
-            @Override
-            public void onClick(double x, double y) {
-                doDownload(true);
-            }
-        });
+        if (ConfigurationHandler.isExpertMode()) {
+            this.addButton(new AbstractButtonWidget(this.width/2-90, innerY+80, 180, 20, new LiteralText("Download Blockmap only")) {
+                @Override
+                public void onClick(double x, double y) {
+                    doDownload(true);
+                }
+            });
+        }
     }
     
     private void doDownload(boolean mapOnly) {
