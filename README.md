@@ -31,3 +31,26 @@ The version 0.3 of this mod fixes that problem by adding in a newer certificate.
 So, use the 1.16.4....0.3 version of the mod, it will work from MC 1.16.2 on and fix the ValidatorException problem.
 
 ----------------------------------------------------------------------------------------
+
+**Expert mode**
+
+From version 0.4 on, you can swap block definitions when importing builds.
+For example, if the original uses cobblestone, but you want blackstone instead,
+you can make the importer translate "Cobblestone" into "minecraft:blackstone"
+instead of the default "minecraft:cobblestone".
+
+This needs you to fiddle with the block states file, which needs some
+experience with editing files manually and keeping the format. So, unless
+you're comfortable with that, please don't try. *There is no support for this
+option. If it works for you, great, but if it doesn't, I won't help you.*
+
+Edit the config file and change the expert mode value from false to true.
+After restarting Minecraft, the download GUI shows a new button "download
+blockmap only". Pressing this creates a csv file, named like the schematics,
+that has all the blocks this build uses and how they'd normally map to
+minecraft blocks and states.
+
+Edit this file, keeping its format intact. Change the block IDs in column B
+and, if you'd like to, the states in the following columns to what you want
+them to be. Save the file. Then, press the "download litematic" button. The
+mod will use your file instead of the default.
