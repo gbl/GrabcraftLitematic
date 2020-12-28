@@ -17,6 +17,8 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 /**
  *
@@ -93,27 +95,43 @@ class Downloader {
             ;
         object.read(is);
         File mapFile = new File("schematics", objectName+".csv");
+        File mapFileWritten = mapFile;
         if (mapOnly || !mapFile.exists()) {
             mapFile = new File("schematics", "blockmap.csv");
         }
         BlockMap map = new BlockMap(mapFile);
         if (mapOnly) {
-            try (PrintWriter writer  = new PrintWriter(new FileWriter(mapFile))) {
+            try (PrintWriter writer  = new PrintWriter(new FileWriter(mapFileWritten))) {
+                SortedSet<String> usedBlockNames = new TreeSet<String>();
+                for (int x=0; x<object.getSizeX(); x++) {
+                    for (int y=0; y<object.getSizeY(); y++) {
+                        for (int z=0; z<object.getSizeZ(); z++) {
+                            usedBlockNames.add(object.getBlockNameAt(x, y, z));
+                        }
+                    }
+                }
                 Map<String, BlockWithStates> blockStates = map.getUsedBlocks();
-                SortedSet<String> sortedKeys = new TreeSet(blockStates.keySet());
-                for (String key: sortedKeys) {
+                for (String key: usedBlockNames) {
                     writer.append(key);
                     BlockWithStates bws = blockStates.get(key);
-                    for (Map.Entry<String, String> state: bws.states.entrySet()) {
-                        writer.append('\t').append(state.getKey()).append('\t').append(state.getValue());
+                    if (bws == null) {
+                        writer.append("\tminecraft:barrier");
+                    } else if (!Registry.BLOCK.containsId(new Identifier(bws.blockName))) {
+                        writer.append("\tminecraft:bedrock");
+                        System.err.println("blockmap contains unknown block "+bws.blockName);
+                    } else {
+                        writer.append('\t').append(bws.blockName);
+                        for (Map.Entry<String, String> state: bws.states.entrySet()) {
+                            writer.append('\t').append(state.getKey()).append('\t').append(state.getValue());
+                        }
                     }
                     writer.append('\n');
                 }
                 if (writer.checkError()) {
-                    throw new IOException("Can't write to "+mapFile.getName());
+                    throw new IOException("Can't write to "+mapFileWritten.getName());
                 }
                 writer.close();
-                return "Downloaded the map to "+mapFile.getName();
+                return "Downloaded the map to "+mapFileWritten.getName();
             }
         } else {
             Litematic schema = new Litematic(objectName, object.getSizeX(), object.getSizeY(), object.getSizeZ());

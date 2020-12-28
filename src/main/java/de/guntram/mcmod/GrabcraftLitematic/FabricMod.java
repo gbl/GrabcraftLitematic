@@ -6,6 +6,7 @@
 package de.guntram.mcmod.GrabcraftLitematic;
 
 import com.oneandone.compositejks.SslContextUtils;
+import de.guntram.mcmod.fabrictools.ConfigurationProvider;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -55,7 +56,12 @@ public class FabricMod implements ClientModInitializer, EndTick, PreLaunchEntryp
     @Override
     public void onInitializeClient() {
         final String category="key.categories.grabcraft-litematic";
-        
+
+// Do NOT register the confHandler; we only want people to enable expert mode
+// who know a bit about editing files and keeping the format.
+        ConfigurationHandler confHandler = ConfigurationHandler.getInstance();
+        confHandler.load(ConfigurationProvider.getSuggestedFile(MODID));
+
         openDownloadScreen = new KeyBinding("key.grabcraft-litematic.download", GLFW_KEY_Z, category);
 //        CrowdinTranslate.downloadTranslations(MODID);
         KeyBindingHelper.registerKeyBinding(openDownloadScreen);
