@@ -30,7 +30,7 @@ public class DownloadGui extends Screen {
     @Override
     protected void init() {
         innerX = width/2 - 100;
-        innerY = height/2 - 40;
+        innerY = height/2 - 60;
 
         this.addButton(urlInput = new TextFieldWidget(this.textRenderer, innerX+10, innerY+38, 180, 20, new LiteralText("")));
         urlInput.setMaxLength(200);
@@ -40,13 +40,13 @@ public class DownloadGui extends Screen {
         }
         urlInput.setSelected(true);
         this.setFocused(urlInput);
-        this.addButton(new AbstractButtonWidget(this.width/2-25, innerY+60, 180, 20, new LiteralText("Download Litematic")) {
+        this.addButton(new AbstractButtonWidget(this.width/2-90, innerY+60, 180, 20, new LiteralText("Download Litematic")) {
             @Override
             public void onClick(double x, double y) {
                 doDownload(false);
             }
         });
-        this.addButton(new AbstractButtonWidget(this.width/2-25, innerY+80, 180, 20, new LiteralText("Download Blockmap only")) {
+        this.addButton(new AbstractButtonWidget(this.width/2-90, innerY+80, 180, 20, new LiteralText("Download Blockmap only")) {
             @Override
             public void onClick(double x, double y) {
                 doDownload(true);
@@ -71,10 +71,10 @@ public class DownloadGui extends Screen {
         super.render(stack, mouseX, mouseY, ticks);
         drawTextWithShadow(stack, textRenderer, new LiteralText("Copy/paste your URL here"), innerX+10, innerY+20, 0xffffff);
         if (message1 != null) {
-            drawTextWithShadow(stack, textRenderer, message1, innerX+10, innerY+80, 0xff0000);
+            drawTextWithShadow(stack, textRenderer, message1, innerX+10, innerY+100, 0xff0000);
         }
         if (message2 != null) {
-            drawTextWithShadow(stack, textRenderer, message2, innerX+10, innerY+80+textRenderer.fontHeight, 0xffffff);
+            drawTextWithShadow(stack, textRenderer, message2, innerX+10, innerY+100+textRenderer.fontHeight, 0xffffff);
         }
     }
 }
