@@ -38,7 +38,7 @@ public class DownloadGui extends Screen {
         if (clipboard.startsWith(Downloader.urlStart)) {
             urlInput.setText(clipboard);
         }
-        urlInput.setSelected(true);
+        urlInput.setTextFieldFocused(true);
         this.setFocused(urlInput);
         this.addButton(new AbstractButtonWidget(this.width/2-90, innerY+60, 180, 20, new LiteralText("Download Litematic")) {
             @Override
