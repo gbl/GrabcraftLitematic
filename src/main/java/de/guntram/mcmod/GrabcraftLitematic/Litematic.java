@@ -10,10 +10,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.ListTag;
-import net.minecraft.nbt.LongArrayTag;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtIo;
+import net.minecraft.nbt.NbtList;
+import net.minecraft.nbt.NbtLongArray;
 
 /**
  *
@@ -21,10 +21,10 @@ import net.minecraft.nbt.NbtIo;
  */
 public class Litematic {
     
-    private CompoundTag data;
-    private CompoundTag metaData;
-    private CompoundTag regions;
-    private CompoundTag region;
+    private NbtCompound data;
+    private NbtCompound metaData;
+    private NbtCompound regions;
+    private NbtCompound region;
     
     private String name;
     
@@ -38,11 +38,11 @@ public class Litematic {
         this.y = y;
         this.z = z;
 
-        data =  new CompoundTag();
+        data =  new NbtCompound();
         data.putInt("MinecraftDataVersion", 2578);
         data.putInt("Version", 5);
         
-        metaData =  new CompoundTag();
+        metaData =  new NbtCompound();
         data.put("Metadata", metaData);
         metaData.putLong("TimeCreated", System.currentTimeMillis());
         metaData.putLong("TimeModified", System.currentTimeMillis());
@@ -52,18 +52,18 @@ public class Litematic {
         metaData.putString("Author", "GrabcraftLitematic");
         metaData.putInt("TotalVolume", x*y*z);
         metaData.putString("Name", name);
-        CompoundTag size = new CompoundTag();
+        NbtCompound size = new NbtCompound();
         size.putInt("x", x);
         size.putInt("y", y);
         size.putInt("z", z);
         metaData.put("EnclosingSize", size);
         
-        regions = new CompoundTag();
+        regions = new NbtCompound();
         data.put("Regions", regions);
         
-        region = new CompoundTag();
+        region = new NbtCompound();
         // Do not put this into regions yet as there might be a name change later
-        CompoundTag position = new CompoundTag();
+        NbtCompound position = new NbtCompound();
         position.putInt("x", 0);
         position.putInt("y", 0);
         position.putInt("z", 0);
@@ -138,18 +138,18 @@ public class Litematic {
                 }
             }
         }
-        LongArrayTag tag = new LongArrayTag(longData);
+        NbtLongArray tag = new NbtLongArray(longData);
         region.put("BlockStates", tag);
         metaData.putInt("TotalBlocks", nonAirBlocks);
     }
     
     private void generatePalette() {
-        ListTag blockStatePalette = new ListTag();
+        NbtList blockStatePalette = new NbtList();
         for (BlockWithStates entry: palette) {
-            CompoundTag blockEntry = new CompoundTag();
+            NbtCompound blockEntry = new NbtCompound();
             blockEntry.putString("Name", entry.blockName);
             if (entry.states != null && !entry.states.isEmpty()) {
-                CompoundTag properties = new CompoundTag();
+                NbtCompound properties = new NbtCompound();
                 for (Map.Entry<String, String> property: entry.states.entrySet()) {
                     properties.putString(property.getKey(), property.getValue());
                 }
