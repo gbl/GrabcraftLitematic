@@ -5,7 +5,6 @@
  */
 package de.guntram.mcmod.GrabcraftLitematic;
 
-import com.oneandone.compositejks.SslContextUtils;
 import de.guntram.mcmod.fabrictools.ConfigurationProvider;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -13,7 +12,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.security.CodeSource;
-import java.security.GeneralSecurityException;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import net.fabricmc.api.ClientModInitializer;
@@ -23,8 +21,6 @@ import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import static org.lwjgl.glfw.GLFW.GLFW_KEY_Z;
 
 /**
@@ -39,6 +35,7 @@ public class FabricMod implements ClientModInitializer, EndTick, PreLaunchEntryp
 
     @Override
     public void onPreLaunch() {
+        /* Hopefully, with java 16, this will be a thing of the past. 
         Logger logger = LogManager.getLogger();
         logger.info("Grabcraft-Litematic merging cacerts");
         try {
@@ -51,6 +48,7 @@ public class FabricMod implements ClientModInitializer, EndTick, PreLaunchEntryp
             logger.info("- whoa! what a fail!");
             ex.printStackTrace();
         }
+        */
     }
 
     @Override

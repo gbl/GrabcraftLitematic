@@ -6,7 +6,8 @@
 package de.guntram.mcmod.GrabcraftLitematic;
 
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.gui.widget.AbstractButtonWidget;
+import net.minecraft.client.gui.screen.narration.NarrationMessageBuilder;
+import net.minecraft.client.gui.widget.ClickableWidget;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.LiteralText;
@@ -32,7 +33,7 @@ public class DownloadGui extends Screen {
         innerX = width/2 - 100;
         innerY = height/2 - 60;
 
-        this.addButton(urlInput = new TextFieldWidget(this.textRenderer, innerX+10, innerY+38, 180, 20, new LiteralText("")));
+        this.addDrawableChild(urlInput = new TextFieldWidget(this.textRenderer, innerX+10, innerY+38, 180, 20, new LiteralText("")));
         urlInput.setMaxLength(200);
         String clipboard = client.keyboard.getClipboard();
         if (clipboard.startsWith(Downloader.urlStart)) {
@@ -40,17 +41,25 @@ public class DownloadGui extends Screen {
         }
         urlInput.setTextFieldFocused(true);
         this.setFocused(urlInput);
-        this.addButton(new AbstractButtonWidget(this.width/2-90, innerY+60, 180, 20, new LiteralText("Download Litematic")) {
+        this.addDrawableChild(new ClickableWidget(this.width/2-90, innerY+60, 180, 20, new LiteralText("Download Litematic")) {
             @Override
             public void onClick(double x, double y) {
                 doDownload(false);
             }
+
+            @Override
+            public void appendNarrations(NarrationMessageBuilder builder) {
+            }
         });
         if (ConfigurationHandler.isExpertMode()) {
-            this.addButton(new AbstractButtonWidget(this.width/2-90, innerY+80, 180, 20, new LiteralText("Download Blockmap only")) {
+            this.addDrawableChild(new ClickableWidget(this.width/2-90, innerY+80, 180, 20, new LiteralText("Download Blockmap only")) {
                 @Override
                 public void onClick(double x, double y) {
                     doDownload(true);
+                }
+
+                @Override
+                public void appendNarrations(NarrationMessageBuilder builder) {
                 }
             });
         }
