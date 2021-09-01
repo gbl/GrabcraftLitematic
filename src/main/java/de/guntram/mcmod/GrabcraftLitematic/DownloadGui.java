@@ -31,7 +31,7 @@ public class DownloadGui extends Screen {
     @Override
     protected void init() {
         innerX = width/2 - 100;
-        innerY = height/2 - 60;
+        innerY = height/2 - 80;
 
         this.addDrawableChild(urlInput = new TextFieldWidget(this.textRenderer, innerX+10, innerY+38, 180, 20, new LiteralText("")));
         urlInput.setMaxLength(200);
@@ -51,8 +51,31 @@ public class DownloadGui extends Screen {
             public void appendNarrations(NarrationMessageBuilder builder) {
             }
         });
+        
+        this.addDrawableChild(new ClickableWidget(this.width/2-90, innerY+82, 80, 20, Downloader.getFlipXText()) {
+            @Override
+            public void onClick(double x, double y) {
+                Downloader.toggleFlipX();
+                setMessage(Downloader.getFlipXText());
+            }
+            @Override
+            public void appendNarrations(NarrationMessageBuilder builder) {
+            }
+        });
+
+        this.addDrawableChild(new ClickableWidget(this.width/2+10, innerY+82, 80, 20, Downloader.getFlipZText()) {
+            @Override
+            public void onClick(double x, double y) {
+                Downloader.toggleFlipZ();
+                setMessage(Downloader.getFlipZText());
+            }
+            @Override
+            public void appendNarrations(NarrationMessageBuilder builder) {
+            }
+        });
+        
         if (ConfigurationHandler.isExpertMode()) {
-            this.addDrawableChild(new ClickableWidget(this.width/2-90, innerY+80, 180, 20, new LiteralText("Download Blockmap only")) {
+            this.addDrawableChild(new ClickableWidget(this.width/2-90, innerY+110, 180, 20, new LiteralText("Download Blockmap only")) {
                 @Override
                 public void onClick(double x, double y) {
                     doDownload(true);

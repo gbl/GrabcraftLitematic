@@ -32,23 +32,9 @@ public class FabricMod implements ClientModInitializer, EndTick, PreLaunchEntryp
     static final String MODID="grabcraft-litematic";
     static final String MODNAME="GrabcraftLitematic";
     static KeyBinding openDownloadScreen;
-
+    
     @Override
     public void onPreLaunch() {
-        /* Hopefully, with java 16, this will be a thing of the past. 
-        Logger logger = LogManager.getLogger();
-        logger.info("Grabcraft-Litematic merging cacerts");
-        try {
-            SslContextUtils.mergeWithSystem(this.getClass().getClassLoader().getResourceAsStream("cacerts"));
-            logger.info("- seems to have worked ok");
-        } catch (IOException | GeneralSecurityException ex) {
-            logger.info("- did not work, here's why:");
-            ex.printStackTrace();
-        } catch (Exception ex) {
-            logger.info("- whoa! what a fail!");
-            ex.printStackTrace();
-        }
-        */
     }
 
     @Override

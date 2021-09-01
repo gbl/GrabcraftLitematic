@@ -17,6 +17,8 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import net.minecraft.text.LiteralText;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -28,8 +30,8 @@ class Downloader {
     
     public static final String urlStart = "https://www.grabcraft.com/minecraft/";
     private static final String urlRender = "https://www.grabcraft.com/js/RenderObject/";
-    
     private static String author;
+    private static boolean flipX, flipZ;
     
     public static String download(String urlString, boolean mapOnly) {
         author = "GrabcraftLitematica";
@@ -100,6 +102,12 @@ class Downloader {
             mapFile = new File("schematics", "blockmap.csv");
         }
         BlockMap map = new BlockMap(mapFile);
+        if (flipX) {
+            map.replaceStates("west", "east");
+        }
+        if (flipZ) {
+            map.replaceStates("north", "south");
+        }
         if (mapOnly) {
             try (PrintWriter writer  = new PrintWriter(new FileWriter(mapFileWritten))) {
                 SortedSet<String> usedBlockNames = new TreeSet<String>();
@@ -141,5 +149,16 @@ class Downloader {
             schema.save(new File("schematics", objectName+".litematic"));
             return "Download to "+objectName+" ok";
         }
+    }
+    
+    public static void toggleFlipX() { flipX = !flipX; }
+    public static void toggleFlipZ() { flipZ = !flipZ; }
+    
+    public static Text getFlipXText() {
+        return new LiteralText(flipX ? "Flip X: Yes" : "Flip X: No");
+    }
+    
+    public static Text getFlipZText() {
+        return new LiteralText(flipZ ? "Flip Z: Yes" : "Flip Z: No");
     }
 }

@@ -68,4 +68,10 @@ public class BlockMap {
     public Map<String, BlockWithStates> getUsedBlocks() {
         return map;
     }
+
+    public void replaceStates(String first, String second) {
+        for (BlockWithStates blockwithstate: map.values()) {
+            blockwithstate.replaceStates(first, second);
+        }
+    }
 }

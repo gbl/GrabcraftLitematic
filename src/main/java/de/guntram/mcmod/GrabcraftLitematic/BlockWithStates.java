@@ -30,4 +30,14 @@ public class BlockWithStates {
             this.states.put(states[i], states[i+1]);
         }
     }
+
+    void replaceStates(String first, String second) {
+        for (Map.Entry<String, String> entry: states.entrySet()) {
+            if (entry.getValue().equals(first)) {
+                entry.setValue(second);
+            } else if (entry.getValue().equals(second)) {
+                entry.setValue(first);
+            }
+        }
+    }
 }
