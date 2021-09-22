@@ -56,7 +56,7 @@ public class FabricMod implements ClientModInitializer, EndTick, PreLaunchEntryp
     @Override
     public void onEndTick(MinecraftClient client) {
         if (openDownloadScreen.wasPressed()) {
-            MinecraftClient.getInstance().openScreen(new DownloadGui());
+            MinecraftClient.getInstance().setScreen(new DownloadGui());
         }
     }
     
