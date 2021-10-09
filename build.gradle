@@ -17,7 +17,7 @@ sourceCompatibility = 16
 targetCompatibility = 16
 
 ext.Versions = new Properties()
-Versions.load(file("Versionfiles/mcversion-21w39a.properties").newReader())
+Versions.load(file("Versionfiles/mcversion-21w40a.properties").newReader())
 
 archivesBaseName = "grabcraft-litematic"
 ext.projectVersion = "0.5"
