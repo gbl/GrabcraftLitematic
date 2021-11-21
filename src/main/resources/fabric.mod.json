@@ -19,8 +19,7 @@
       "fabric": "*"
     },
     "recommends": {
-      "modmenu" : "*",
-      "modupdater": ">=1.1.7"
+      "modmenu" : "*"
     },
     "name": "GrabcraftLitematic",
     "description": "Download schemas from GrabCraft in Litematica format",
