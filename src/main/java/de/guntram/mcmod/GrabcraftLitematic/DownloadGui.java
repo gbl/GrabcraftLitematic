@@ -10,7 +10,6 @@ import net.minecraft.client.gui.screen.narration.NarrationMessageBuilder;
 import net.minecraft.client.gui.widget.ClickableWidget;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 
 /**
@@ -24,7 +23,7 @@ public class DownloadGui extends Screen {
     int innerX, innerY;
 
     public DownloadGui() {
-        super(new LiteralText(FabricMod.MODNAME));
+        super(Text.literal(FabricMod.MODNAME));
         message1 = message2 = null;
     }
     
@@ -33,7 +32,7 @@ public class DownloadGui extends Screen {
         innerX = width/2 - 100;
         innerY = height/2 - 80;
 
-        this.addDrawableChild(urlInput = new TextFieldWidget(this.textRenderer, innerX+10, innerY+38, 180, 20, new LiteralText("")));
+        this.addDrawableChild(urlInput = new TextFieldWidget(this.textRenderer, innerX+10, innerY+38, 180, 20, Text.literal("")));
         urlInput.setMaxLength(200);
         String clipboard = client.keyboard.getClipboard();
         if (clipboard.startsWith(Downloader.urlStart)) {
@@ -41,7 +40,7 @@ public class DownloadGui extends Screen {
         }
         urlInput.setTextFieldFocused(true);
         this.setFocused(urlInput);
-        this.addDrawableChild(new ClickableWidget(this.width/2-90, innerY+60, 180, 20, new LiteralText("Download Litematic")) {
+        this.addDrawableChild(new ClickableWidget(this.width/2-90, innerY+60, 180, 20, Text.literal("Download Litematic")) {
             @Override
             public void onClick(double x, double y) {
                 doDownload(false);
@@ -75,7 +74,7 @@ public class DownloadGui extends Screen {
         });
         
         if (ConfigurationHandler.isExpertMode()) {
-            this.addDrawableChild(new ClickableWidget(this.width/2-90, innerY+110, 180, 20, new LiteralText("Download Blockmap only")) {
+            this.addDrawableChild(new ClickableWidget(this.width/2-90, innerY+110, 180, 20, Text.literal("Download Blockmap only")) {
                 @Override
                 public void onClick(double x, double y) {
                     doDownload(true);
@@ -92,10 +91,10 @@ public class DownloadGui extends Screen {
         String downloadResult = Downloader.download(urlInput.getText(), mapOnly);
         if (downloadResult.contains("\n")) {
             String[] parts = downloadResult.split("\n");
-            message1 = new LiteralText(parts[0]);
-            message2 = new LiteralText(parts[1]);
+            message1 = Text.literal(parts[0]);
+            message2 = Text.literal(parts[1]);
         } else {
-            message1 = new LiteralText(downloadResult);
+            message1 = Text.literal(downloadResult);
             message2 = null;
         }
     }
@@ -103,7 +102,7 @@ public class DownloadGui extends Screen {
     @Override
     public void render(MatrixStack stack, int mouseX, int mouseY, float ticks) {
         super.render(stack, mouseX, mouseY, ticks);
-        drawTextWithShadow(stack, textRenderer, new LiteralText("Copy/paste your URL here"), innerX+10, innerY+20, 0xffffff);
+        drawTextWithShadow(stack, textRenderer, Text.literal("Copy/paste your URL here"), innerX+10, innerY+20, 0xffffff);
         if (message1 != null) {
             drawTextWithShadow(stack, textRenderer, message1, innerX+10, innerY+100, 0xff0000);
         }

@@ -17,7 +17,6 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -155,10 +154,10 @@ class Downloader {
     public static void toggleFlipZ() { flipZ = !flipZ; }
     
     public static Text getFlipXText() {
-        return new LiteralText(flipX ? "Flip X: Yes" : "Flip X: No");
+        return Text.literal(flipX ? "Flip X: Yes" : "Flip X: No");
     }
     
     public static Text getFlipZText() {
-        return new LiteralText(flipZ ? "Flip Z: Yes" : "Flip Z: No");
+        return Text.literal(flipZ ? "Flip Z: Yes" : "Flip Z: No");
     }
 }
