@@ -1,6 +1,6 @@
 plugins {
-	id 'fabric-loom' version '0.11-SNAPSHOT'
-	id "com.modrinth.minotaur" version "1.1.0"
+	id 'fabric-loom' version '0.12-+'
+	id "com.modrinth.minotaur" version "2.+"
 	id "com.matthewprenger.cursegradle" version "1.4.0"
 }
 
@@ -17,7 +17,7 @@ sourceCompatibility = 17
 targetCompatibility = 17
 
 ext.Versions = new Properties()
-Versions.load(file("Versionfiles/mcversion-1.19.properties").newReader())
+Versions.load(file("Versionfiles/mcversion-1.19.1.properties").newReader())
 
 archivesBaseName = "grabcraft-litematic"
 ext.projectVersion = "0.5"
@@ -59,16 +59,10 @@ jar {
 
 import com.modrinth.minotaur.TaskModrinthUpload
 
-task publishModrinth (type: TaskModrinthUpload){
-
-    token = System.getenv("MODRINTH_TOKEN")
-    projectId = 'CpRqX7TP'
-    versionNumber = project.version
+modrinth {
+    projectId = 'grabcraft-litematic'
     versionName = project.archivesBaseName
-    releaseType = 'release'
-    uploadFile = remapJar // This is the java jar task
-    addGameVersion("${Versions['minecraft_version']}")
-    addLoader('fabric')
+    uploadFile = remapJar
 }
 
 curseforge {
