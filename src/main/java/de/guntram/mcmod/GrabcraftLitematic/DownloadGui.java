@@ -47,7 +47,7 @@ public class DownloadGui extends Screen {
             }
 
             @Override
-            public void appendNarrations(NarrationMessageBuilder builder) {
+            protected void method_47399(NarrationMessageBuilder narrationMessageBuilder) {
             }
         });
         
@@ -57,8 +57,9 @@ public class DownloadGui extends Screen {
                 Downloader.toggleFlipX();
                 setMessage(Downloader.getFlipXText());
             }
+
             @Override
-            public void appendNarrations(NarrationMessageBuilder builder) {
+            protected void method_47399(NarrationMessageBuilder narrationMessageBuilder) {
             }
         });
 
@@ -68,8 +69,9 @@ public class DownloadGui extends Screen {
                 Downloader.toggleFlipZ();
                 setMessage(Downloader.getFlipZText());
             }
+
             @Override
-            public void appendNarrations(NarrationMessageBuilder builder) {
+            protected void method_47399(NarrationMessageBuilder narrationMessageBuilder) {
             }
         });
         
@@ -81,7 +83,7 @@ public class DownloadGui extends Screen {
                 }
 
                 @Override
-                public void appendNarrations(NarrationMessageBuilder builder) {
+                protected void method_47399(NarrationMessageBuilder narrationMessageBuilder) {
                 }
             });
         }

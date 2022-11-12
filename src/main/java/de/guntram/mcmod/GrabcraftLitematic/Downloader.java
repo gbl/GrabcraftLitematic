@@ -19,6 +19,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registries;
 import net.minecraft.util.registry.Registry;
 
 /**
@@ -123,7 +124,7 @@ class Downloader {
                     BlockWithStates bws = blockStates.get(key);
                     if (bws == null) {
                         writer.append("\tminecraft:barrier");
-                    } else if (!Registry.BLOCK.containsId(new Identifier(bws.blockName))) {
+                    } else if (!Registries.BLOCK.containsId(new Identifier(bws.blockName))) {
                         writer.append("\tminecraft:bedrock");
                         System.err.println("blockmap contains unknown block "+bws.blockName);
                     } else {
